@@ -20,25 +20,25 @@ Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 */
 
-var lengthOfLongestSubstring = function (str) {
-    let start = 0;
-    let end = 0;
-    let maxlength = 0;
-    const occr = new Set();
-    // console.log(uniqueCharacter);
-    while (start < str.length) {
-        if (!occr.has(str[start])) {
-            occr.add(str[start]);
-            start++;
-            maxlength = Math.max(maxlength, occr.size);
-        } else {
-            occr.delete(str[end]);
-            end++;
-        }
-    }
-    return maxlength;
-};
+// var lengthOfLongestSubstring = function (str) {
+//     let start = 0;
+//     let end = 0;
+//     let maxlength = 0;
+//     const occr = new Set();
+//     // console.log(uniqueCharacter);
+//     while (start < str.length) {
+//         if (!occr.has(str[start])) {
+//             occr.add(str[start]);
+//             start++;
+//             maxlength = Math.max(maxlength, occr.size);
+//         } else {
+//             occr.delete(str[end]);
+//             end++;
+//         }
+//     }
+//     return maxlength;
+// };
 
-console.log(lengthOfLongestSubstring("abcabcbb"));
-console.log(lengthOfLongestSubstring("bbbbb"));
-console.log(lengthOfLongestSubstring("pwwkew"));
+// console.log(lengthOfLongestSubstring("abcabcbb"));
+// console.log(lengthOfLongestSubstring("bbbbb"));
+// console.log(lengthOfLongestSubstring("pwwkew"));
