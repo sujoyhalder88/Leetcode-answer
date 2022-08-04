@@ -58,7 +58,7 @@ function findMedianSortedArrays(nums1 = [], nums2 = []) {
     }
 }
 
-const nums1 = [1, 2];
-const nums2 = [3, 4];
+const nums1 = [7, 12, 14, 15];
+const nums2 = [1, 2, 3, 4, 9, 11];
 
 console.log(findMedianSortedArrays(nums1, nums2));
