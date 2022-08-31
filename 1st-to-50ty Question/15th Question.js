@@ -10,7 +10,7 @@ var threeSum = function (nums) {
     var l = 0;
     var r = 0;
     nums.sort((a, b) => a - b);
-    console.log(nums);
+    // console.log(nums);
     for (var i = 0; i < nums.length; i++) {
         if (i > 0 && nums[i] === nums[i - 1]) continue;
         l = i + 1;
@@ -30,5 +30,33 @@ var threeSum = function (nums) {
         }
     }
     return res;
+};
+console.log(threeSum([-1, 0, 1, 2, -1, -4]));
+
+//=======================================================================
+var threeSum = function (nums) {
+    let start = 0;
+    let end = 0;
+    let result = [];
+    nums.sort((a, b) => a - b);
+    for (let i = 0; i < nums.length; i++) {
+        if (i > 0 && nums[i] === nums[i - 1]) continue;
+        start = i + 1;
+        end = nums.length - 1;
+        while (start < end) {
+            if (nums[i] + nums[start] + nums[end] < 0) {
+                start++;
+            } else if (nums[i] + nums[start] + nums[end] > 0) {
+                end--;
+            } else {
+                result.push([nums[i], nums[start], nums[end]]);
+                while (start < end && nums[start] === nums[start + 1]) start++;
+                while (start < end && nums[start] === nums[end - 1]) end--;
+                start++;
+                end--;
+            }
+        }
+    }
+    return result;
 };
 console.log(threeSum([-1, 0, 1, 2, -1, -4]));
