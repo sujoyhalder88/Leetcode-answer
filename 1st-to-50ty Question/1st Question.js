@@ -46,17 +46,15 @@ console.log(twoSum([2, 7, 11, 15], 9));
 */
 
 //======================Otimize================================================
-/*
+
 function twoSum(nums, target) {
-    let occr = {};
-    for (let i = 0; i < nums.length; i++) {
-        if (occr[nums[i]] !== undefined) {
-            return [occr[nums[i]], i];
-        } else {
-            occr[target - nums[i]] = i;
-        }
+  let occr = {};
+  for (let i = 0; i < nums.length; i++) {
+    if (occr[nums[i]] !== undefined) {
+      return [occr[nums[i]], i];
+    } else {
+      occr[target - nums[i]] = i;
     }
+  }
 }
 console.log(twoSum([2, 7, 11, 15], 9));
-
-*/
